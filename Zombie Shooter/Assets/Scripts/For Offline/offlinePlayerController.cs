@@ -18,26 +18,31 @@ public class offlinePlayerController : LivingEntity
     protected override void Start()
     {
         base.Start();
+
+	}
+	void Awake()
+	{
 		myRigidbody = GetComponent<Rigidbody> ();
-        Mygunctrlr = GetComponent<GunConroller>();
-        
+		Mygunctrlr = GetComponent<GunConroller>();
+		FindObjectOfType<EnemySpawner> ().OnNewWave += OnNewWave;
+	}
+	void OnNewWave(int waveNumber) {
+		health = startingHealth;
+		Mygunctrlr.EquipGun (waveNumber - 1);
 	}
 
     void Update()
-    {
+	{
 
-        float x = Input.GetAxis("Horizontal") * Time.deltaTime * playerSpeed;
-        float y = Input.GetAxis("Vertical") * Time.deltaTime * playerSpeed;
-        if (moveJoystick.InputDirection != Vector3.zero)
-        {
-            x = moveJoystick.InputDirection.x * Time.deltaTime * playerSpeed;
-            y = moveJoystick.InputDirection.y * Time.deltaTime * playerSpeed;
-        }
-        velocity = new Vector3(x, 0, y);
-        if (Input.GetKey(KeyCode.Space))
+		float x = Input.GetAxis ("Horizontal") * Time.deltaTime * playerSpeed;
+		float y = Input.GetAxis ("Vertical") * Time.deltaTime * playerSpeed;
+		if (moveJoystick.InputDirection != Vector3.zero) {
+			x = moveJoystick.InputDirection.x * Time.deltaTime * playerSpeed;
+			y = moveJoystick.InputDirection.y * Time.deltaTime * playerSpeed;
+		}
+		velocity = new Vector3 (x, 0, y);
+		if (Input.GetKey (KeyCode.Space))
 			Mygunctrlr.OnTriggerHold ();
-
-        
 
     }
 
