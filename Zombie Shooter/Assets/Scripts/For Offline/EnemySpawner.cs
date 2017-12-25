@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour {
 	public bool devMode;
     public Wave[] waves;
     public Enemy enemy;
+	public ScoreManager ScoreMGR;
 
     LivingEntity playerEntity;
     Transform playerT;
@@ -110,6 +111,7 @@ public class EnemySpawner : MonoBehaviour {
     void OnEnemyDeath()
     {
         enemiesRemainingAlive--;
+		ScoreMGR.CoinCollected (currentWave.coinsToGive);
         if (enemiesRemainingAlive == 0)
             NexWave();
     }
@@ -147,5 +149,6 @@ public class EnemySpawner : MonoBehaviour {
 		public int hitsToKillPlayer;
 		public float enemyHealth;
 		public Color skinColour;
+		public int coinsToGive;
     }
 }

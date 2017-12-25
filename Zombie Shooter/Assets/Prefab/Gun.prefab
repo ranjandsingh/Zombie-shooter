@@ -748,15 +748,13 @@ MonoBehaviour:
   fireMode: 0
   projectileSpawn:
   - {fileID: 4310199646044288}
-  - {fileID: 4146954055057026}
-  - {fileID: 4263483805208576}
   projectile: {fileID: 114779868352453902, guid: f3fe081a3c4b5054398fae152077f4f1,
     type: 2}
   fireRate: 10
-  muzzleVelocity: 25
+  muzzleVelocity: 12
   burstCount: 5
-  projectilesPerMag: 30
-  reloadTime: 0.3
+  projectilesPerMag: 16
+  reloadTime: 1
   shell: {fileID: 4223462354398878, guid: f76dc43df4fa6204286c00b17673c0de, type: 2}
   shellEjectionPoint: {fileID: 4589860279895898}
   kickMinMax: {x: 0.05, y: 0.2}

@@ -40,7 +40,7 @@ public class VirtualJoyStick : MonoBehaviour,IDragHandler,IPointerUpHandler,IPoi
 
             InputDirection = new Vector3(x, y,0);
             //add fire option here replace the function called inputDirection.normalized with custom fuunctions
-			Debug.Log (InputDirection);
+
             if (InputDirection.magnitude > 1)
             {
                 if (!ForRotation)

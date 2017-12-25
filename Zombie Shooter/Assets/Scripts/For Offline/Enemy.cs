@@ -25,6 +25,7 @@ public class Enemy : LivingEntity
     float myCollisionRadius;
     float targetCollisionRadius;
 
+
     bool hasTarget;
     // Use this for initialization
 
@@ -63,7 +64,6 @@ public class Enemy : LivingEntity
 
 	public void SetCharacteristics(float moveSpeed, int hitsToKillPlayer, float enemyHealth, Color skinColour) {
 		pathfinder.speed = moveSpeed;
-
 		if (hasTarget) {
 			damage = Mathf.Ceil(targetEntity.startingHealth / hitsToKillPlayer);
 		}
