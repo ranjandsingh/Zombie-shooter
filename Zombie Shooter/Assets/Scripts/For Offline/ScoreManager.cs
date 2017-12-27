@@ -7,8 +7,9 @@ using TMPro;
 public class ScoreManager : MonoBehaviour {
 	public int coins = 0;
 	public int totalCoins;
-	public Text CoinText;
-	public TextMeshPro tmptext;
+	public TextMeshProUGUI CoinText;
+	public TextMeshProUGUI tmptext;
+	public TextMeshProUGUI enemycount;
 
 
 	// Use this for initialization
@@ -18,10 +19,13 @@ public class ScoreManager : MonoBehaviour {
 	}
 	public void CoinCollected(int value){
 		coins += value;
+
 		CoinText.text = ""+ coins;
-		tmptext.text = "" + coins;
+
+
 		
 	}
+
 	
 	// Update is called once per frame
 	void Update () {

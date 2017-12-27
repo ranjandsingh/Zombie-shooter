@@ -757,6 +757,8 @@ MonoBehaviour:
   reloadTime: 1
   shell: {fileID: 4223462354398878, guid: f76dc43df4fa6204286c00b17673c0de, type: 2}
   shellEjectionPoint: {fileID: 4589860279895898}
+  shootAudio: {fileID: 8300000, guid: eb8d54cacd3ca5440a9d2750ca508c2d, type: 3}
+  reloadAudio: {fileID: 8300000, guid: b0720b8d8481c324b825c6c4eecdf9ba, type: 3}
   kickMinMax: {x: 0.05, y: 0.2}
   recoilAngleMinMax: {x: 3, y: 5}
   recoilMoveSettleTime: 0.1

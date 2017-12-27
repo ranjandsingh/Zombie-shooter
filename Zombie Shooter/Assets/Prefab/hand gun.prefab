@@ -336,7 +336,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1325987560022214}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.71547264, y: 0.512, z: -14.203}
+  m_LocalPosition: {x: 0.71546936, y: 0.5119934, z: -14.203}
   m_LocalScale: {x: 1.1621604, y: 0.21634643, z: 0.2}
   m_Children:
   - {fileID: 4034272573008046}
@@ -650,6 +650,8 @@ MonoBehaviour:
   reloadTime: 0.85
   shell: {fileID: 4223462354398878, guid: f76dc43df4fa6204286c00b17673c0de, type: 2}
   shellEjectionPoint: {fileID: 4138468552282214}
+  shootAudio: {fileID: 8300000, guid: b2f724fa37537844db9410acc69faff3, type: 3}
+  reloadAudio: {fileID: 8300000, guid: ad687742fb999884eab36199fad84c93, type: 3}
   kickMinMax: {x: 0.05, y: 0.2}
   recoilAngleMinMax: {x: 3, y: 5}
   recoilMoveSettleTime: 0.1

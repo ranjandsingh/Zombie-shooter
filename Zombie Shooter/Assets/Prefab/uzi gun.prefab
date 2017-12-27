@@ -468,7 +468,6 @@ Transform:
   - {fileID: 4909503839549524}
   - {fileID: 4745204614397878}
   - {fileID: 4210751166599796}
-  - {fileID: 4965466086914512}
   - {fileID: 4509957661386854}
   - {fileID: 4650863471027634}
   m_Father: {fileID: 4781940039788134}
@@ -563,7 +562,7 @@ Transform:
   m_LocalScale: {x: 0.780602, y: 0.11086001, z: 0.19999999}
   m_Children: []
   m_Father: {fileID: 4226238474865190}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4650863471027634
 Transform:
@@ -576,7 +575,7 @@ Transform:
   m_LocalScale: {x: 0.45316604, y: 0.14382008, z: 0.054309998}
   m_Children: []
   m_Father: {fileID: 4226238474865190}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!4 &4659443174974944
 Transform:
@@ -614,7 +613,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1976866567849300}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.71547264, y: 0.512, z: -14.203}
+  m_LocalPosition: {x: 171.79135, y: 202.30954, z: -14.203}
   m_LocalScale: {x: 1.1621604, y: 0.21634643, z: 0.2}
   m_Children:
   - {fileID: 4257639026013554}
@@ -635,6 +634,7 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4659443174974944}
+  - {fileID: 4965466086914512}
   m_Father: {fileID: 4226238474865190}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -700,12 +700,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1188350618481720}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.1600003, y: -0.139, z: 0}
-  m_LocalScale: {x: 0.10000001, y: 0.10000001, z: 0.099999994}
+  m_LocalPosition: {x: 0, y: -1.3900758, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4936704279801988}
-  m_Father: {fileID: 4226238474865190}
-  m_RootOrder: 7
+  m_Father: {fileID: 4801742742879896}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23028186403090656
 MeshRenderer:
@@ -1295,13 +1295,15 @@ MonoBehaviour:
   - {fileID: 4891057461066202}
   projectile: {fileID: 114779868352453902, guid: f3fe081a3c4b5054398fae152077f4f1,
     type: 2}
-  fireRate: 12
+  fireRate: 25
   muzzleVelocity: 12
   burstCount: 5
-  projectilesPerMag: 12
+  projectilesPerMag: 25
   reloadTime: 1.25
   shell: {fileID: 4223462354398878, guid: f76dc43df4fa6204286c00b17673c0de, type: 2}
   shellEjectionPoint: {fileID: 4949293227915334}
+  shootAudio: {fileID: 8300000, guid: e96062f097ac1954d824193fc50e8697, type: 3}
+  reloadAudio: {fileID: 8300000, guid: 3499494729da6ac41bfb9009e04eb25a, type: 3}
   kickMinMax: {x: 0.05, y: 0.2}
   recoilAngleMinMax: {x: 3, y: 5}
   recoilMoveSettleTime: 0.1

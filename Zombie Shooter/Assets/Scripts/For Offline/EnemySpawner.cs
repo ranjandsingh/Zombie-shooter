@@ -42,6 +42,7 @@ public class EnemySpawner : MonoBehaviour {
 
         map = FindObjectOfType<MapGenerator>();
         NexWave();
+		ScoreMGR.enemycount.text = "Enemies To Kill :- " + currentWave.enemyCount;
     }
 
     void Update()
@@ -111,6 +112,7 @@ public class EnemySpawner : MonoBehaviour {
     void OnEnemyDeath()
     {
         enemiesRemainingAlive--;
+		ScoreMGR.enemycount.text = "Enemies To Kill :- " + enemiesRemainingAlive;
 		ScoreMGR.CoinCollected (currentWave.coinsToGive);
         if (enemiesRemainingAlive == 0)
             NexWave();
@@ -123,13 +125,16 @@ public class EnemySpawner : MonoBehaviour {
 
     void NexWave()
     {
+		if (currentWaveNumber > 0)
+			AudioManager.instance.PlaySound2D ("Level Complete");
         currentWaveNumber++;
-       
+		ScoreMGR.tmptext.text = "WAVE " + currentWaveNumber;
         if (currentWaveNumber - 1 < waves.Length)
         {
             currentWave = waves[currentWaveNumber - 1];
             enemiesRemainingToSpawn = currentWave.enemyCount;
             enemiesRemainingAlive = currentWave.enemyCount;
+			ScoreMGR.enemycount.text = "Enemies To Kill :- " + currentWave.enemyCount;
         }
         if (OnNewWave != null)
         {

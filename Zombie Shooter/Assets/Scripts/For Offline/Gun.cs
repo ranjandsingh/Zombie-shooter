@@ -21,6 +21,8 @@ public class Gun : MonoBehaviour {
 	public Transform shell;
 	public Transform shellEjectionPoint;
 	MuzzleFlash muzzleflash;
+	public AudioClip shootAudio;
+	public AudioClip reloadAudio;
 
 	[Header("Recoil")]
 	public Vector2 kickMinMax = new Vector2(.05f,.2f);
@@ -53,6 +55,7 @@ public class Gun : MonoBehaviour {
 		//transform.localEulerAngles = transform.localEulerAngles + Vector3.up * recoilAngle;
 
 		if (!isReloading && projectilesRemainingInMag == 0) {
+			
 			Reload ();
 		}
 	}
@@ -88,12 +91,15 @@ public class Gun : MonoBehaviour {
 			//transform.localPosition -= Vector3.forward * Random.Range(kickMinMax.x, kickMinMax.y);
 			//recoilAngle += Random.Range(recoilAngleMinMax.x, recoilAngleMinMax.y);
 			//recoilAngle = Mathf.Clamp(recoilAngle, 0, 30);
+			AudioManager.instance.PlaySound (shootAudio, transform.position);
         }
     }
 
 	public void Reload() {
 		if (!isReloading && projectilesRemainingInMag != projectilesPerMag) {
 			StartCoroutine (AnimateReload ());
+			AudioManager.instance.PlaySound (reloadAudio, transform.position);
+
 		}
 	}
 

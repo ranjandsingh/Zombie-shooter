@@ -903,13 +903,15 @@ MonoBehaviour:
   - {fileID: 4660504251190246}
   projectile: {fileID: 114779868352453902, guid: f3fe081a3c4b5054398fae152077f4f1,
     type: 2}
-  fireRate: 10
+  fireRate: 25
   muzzleVelocity: 15
   burstCount: 5
-  projectilesPerMag: 20
+  projectilesPerMag: 25
   reloadTime: 0.3
   shell: {fileID: 4223462354398878, guid: f76dc43df4fa6204286c00b17673c0de, type: 2}
   shellEjectionPoint: {fileID: 4584311172680480}
+  shootAudio: {fileID: 8300000, guid: 6f9446962abd88149b51e4a54d4914b3, type: 3}
+  reloadAudio: {fileID: 8300000, guid: 3c8ace25d5f5e904db78ef6bc1a7c3ca, type: 3}
   kickMinMax: {x: 0.05, y: 0.2}
   recoilAngleMinMax: {x: 3, y: 5}
   recoilMoveSettleTime: 0.1
