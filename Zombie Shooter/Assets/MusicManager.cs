@@ -18,4 +18,8 @@ public class MusicManager : MonoBehaviour {
 			AudioManager.instance.PlayMusic (mainTheme,2);
 		
 	}
+	public void playmuic()
+	{
+		AudioManager.instance.PlayMusic (mainTheme,2);
+	}
 }

@@ -4,9 +4,9 @@ using System;
 
 public class AudioManager : MonoBehaviour {
 	public enum AudioChannel {Master,sfx,music};
-	float masterVolumePercent = .2f;
-	float sfxVolumePercent = 1;
-	float musicVolumePercent = 1f;
+	public float masterVolumePercent = .2f;
+	public float sfxVolumePercent = 1;
+	public float musicVolumePercent = 1f;
 
 	AudioSource sfx2DSource;
 	AudioSource[] musicSources;
@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour {
 	public static AudioManager instance;
 
 	Transform audioListener;
-	Transform playerT;
+	public Transform playerT;
 	SoundLibrary library;
 
 	void Awake() {
@@ -37,7 +37,7 @@ public class AudioManager : MonoBehaviour {
 			newSfx2Dsource.transform.parent = transform;
 
 			audioListener = FindObjectOfType<AudioListener> ().transform;
-			playerT = FindObjectOfType<offlinePlayerController> ().transform;
+
 			masterVolumePercent = PlayerPrefs.GetFloat ("master vol",masterVolumePercent);
 			musicVolumePercent = PlayerPrefs.GetFloat ("music vol",musicVolumePercent);
 			sfxVolumePercent = PlayerPrefs.GetFloat ("sfx vol",sfxVolumePercent);
