@@ -10,6 +10,7 @@ public class GameUI : MonoBehaviour
     public Image fadePlane;
     public GameObject fadeimage;
     public GameObject gameOverUI;
+	public GameObject gameUI;
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class GameUI : MonoBehaviour
 
     void OnGameOver()
     {
+		gameUI.SetActive (false);
         fadeimage.SetActive(true);
         StartCoroutine(Fade(Color.clear, Color.black, 1));
         gameOverUI.SetActive(true);
@@ -40,6 +42,10 @@ public class GameUI : MonoBehaviour
     public void StartNewGame()
     {
         SceneManager.LoadScene("offline");
-     
     }
+
+	public void backToMenu(){
+		SceneManager.LoadScene("Main Menu");
+
+	}
 }
