@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour {
 	public bool devMode;
     public Wave[] waves;
     public Enemy enemy;
-	public ScoreManager ScoreMGR;
+	public ScoreKeeper ScoreMGR;
 
     LivingEntity playerEntity;
     Transform playerT;
@@ -42,7 +42,6 @@ public class EnemySpawner : MonoBehaviour {
 
         map = FindObjectOfType<MapGenerator>();
         NexWave();
-		ScoreMGR.enemycount.text = "Enemies To Kill :- " + currentWave.enemyCount;
     }
 
     void Update()
@@ -112,8 +111,6 @@ public class EnemySpawner : MonoBehaviour {
     void OnEnemyDeath()
     {
         enemiesRemainingAlive--;
-		ScoreMGR.enemycount.text = "Enemies To Kill :- " + enemiesRemainingAlive;
-		ScoreMGR.CoinCollected (currentWave.coinsToGive);
         if (enemiesRemainingAlive == 0)
             NexWave();
     }
@@ -134,7 +131,6 @@ public class EnemySpawner : MonoBehaviour {
             currentWave = waves[currentWaveNumber - 1];
             enemiesRemainingToSpawn = currentWave.enemyCount;
             enemiesRemainingAlive = currentWave.enemyCount;
-			ScoreMGR.enemycount.text = "Enemies To Kill :- " + currentWave.enemyCount;
         }
         if (OnNewWave != null)
         {

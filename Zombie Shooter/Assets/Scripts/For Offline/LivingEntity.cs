@@ -6,7 +6,7 @@ public class LivingEntity : MonoBehaviour, IDamageable
 {
 
     public float startingHealth;
-    protected float health;
+	public float health { get; protected set;}
     public RectTransform healthebar;
     protected bool dead;
 
@@ -31,7 +31,6 @@ public class LivingEntity : MonoBehaviour, IDamageable
             Die();
         }
 		health -= damage;
-		healthebar.sizeDelta = new Vector2(health * 2, healthebar.sizeDelta.y);
 
     }
 

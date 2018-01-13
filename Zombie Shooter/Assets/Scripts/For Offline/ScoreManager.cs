@@ -20,7 +20,7 @@ public class ScoreManager : MonoBehaviour {
 	public void CoinCollected(int value){
 		coins += value;
 
-		CoinText.text = ""+ coins;
+
 
 
 		
