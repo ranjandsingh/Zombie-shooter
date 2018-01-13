@@ -10,6 +10,7 @@ public class Enemy : LivingEntity
     State currentState;
 
 	public ParticleSystem deathEffect;
+	public static event System.Action OnDeathStatic;
     public UnityEngine.AI.NavMeshAgent pathfinder;
     Transform target;
     LivingEntity targetEntity;
@@ -56,6 +57,8 @@ public class Enemy : LivingEntity
 	{
 		AudioManager.instance.PlaySound ("Impact", transform.position);
 		if (damage >= health) {
+			if (OnDeathStatic != null) 
+				OnDeathStatic ();
 			AudioManager.instance.PlaySound ("Enemy Death", transform.position);
 			//Destroy(Instantiate (deathEffect.gameObject,hitPoint,Quaternion.FromToRotation (Vector3.back,hitDirection))as GameObject,deathEffect.startLifetime);
 			Destroy(Instantiate (deathEffect.gameObject,hitPoint,Quaternion.FromToRotation (Vector3.forward,hitDirection))as GameObject,deathEffect.startLifetime);
@@ -69,8 +72,8 @@ public class Enemy : LivingEntity
 			damage = Mathf.Ceil(targetEntity.startingHealth / hitsToKillPlayer);
 		}
 		startingHealth = enemyHealth;
-
-		skinMaterial = GetComponent<Renderer> ().sharedMaterial;
+		deathEffect.startColor = new Color (skinColour.r, skinColour.g, skinColour.b, 1);
+		skinMaterial = GetComponent<Renderer> ().material;
 		skinMaterial.color = skinColour;
 		originalColour = skinMaterial.color;
 	}

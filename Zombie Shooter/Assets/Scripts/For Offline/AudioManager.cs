@@ -19,6 +19,8 @@ public class AudioManager : MonoBehaviour {
 	SoundLibrary library;
 
 	void Awake() {
+		if(FindObjectOfType<offlinePlayerController> () != null)
+			playerT = FindObjectOfType<offlinePlayerController> ().transform;
 		library = GetComponent <SoundLibrary> ();
 		if (instance != null)
 			Destroy (gameObject);
