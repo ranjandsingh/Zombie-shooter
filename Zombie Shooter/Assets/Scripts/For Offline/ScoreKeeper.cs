@@ -39,8 +39,8 @@ public class ScoreKeeper : MonoBehaviour {
 
 		lastEnemyKillTime = Time.time;
 
-		score += 5 + (int)Mathf.Pow(2,streakCount);
-		CoinText.text = "" + score;
+		score += 5 + streakCount;//(int)Mathf.Pow(2,streakCount);
+		CoinText.text = score.ToString("D4");
 	}
 
 	void OnPlayerDeath() {
@@ -53,6 +53,12 @@ public class ScoreKeeper : MonoBehaviour {
 		else
 			HighScoreText.text = "HighScore:- " + HighScore;
 		score = 0;
+
+	}
+	public void newWave(int waveNumber){
+		string[] numbers = { "One", "Two", "Three", "Four", "Five" };
+		tmptext.text = "- Wave " + numbers [waveNumber - 1];
+
 
 	}
 	

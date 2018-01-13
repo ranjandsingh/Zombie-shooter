@@ -125,7 +125,7 @@ public class EnemySpawner : MonoBehaviour {
 		if (currentWaveNumber > 0)
 			AudioManager.instance.PlaySound2D ("Level Complete");
         currentWaveNumber++;
-		ScoreMGR.tmptext.text = "WAVE " + currentWaveNumber;
+		ScoreMGR.newWave (currentWaveNumber);
         if (currentWaveNumber - 1 < waves.Length)
         {
             currentWave = waves[currentWaveNumber - 1];
